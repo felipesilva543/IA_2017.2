@@ -1,114 +1,100 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <ctime>
+#include "grafo.h"
+#include "dfs.h"
+#include "bfs.h"
 //#include <utility> // Pra usar o make pair
-#include <stack> // Pilha para Busca por profundidade (DFS)
 using namespace std;
 
-enum {Oradea, Zerind, Arad, Timisoara, Lugoj, Mehadia, Drobeta, Sibiu, RVilcea, Craiova,
-     Fagaras, Pitesti, Bucharest, Giurgiu, Neamt, Iasi, Vaslui, Urziceni, Hirsova, Eforie
-};
-int numV = 20; // Número de vertices
-
-class Grafo{
-    int grafo[20][20];
-  public:
-    Grafo(){}
-
-    void addPonto(int _linha, int _coluna, int _peso){
-        grafo[_linha][_coluna] = _peso;
-    }
-    int getPeso(int _linha, int _coluna){
-        if(grafo[_linha][_coluna]){
-            return grafo[_linha][_coluna];
-        }else if (grafo[_coluna][_linha]) {
-            return grafo[_coluna][_linha];
-        }
-        return 0;
-    }
-
-};
-
-void IniGrafo(Grafo& grafo){
+void InitGrafo(Grafo& grafo){
     for(int i = 0; i < 20; i++)
         for(int j = 0; j < 20; j++)
             grafo.addPonto(i, j, 0);
 
-    grafo.addPonto(Oradea, Zerind, 71);
-    grafo.addPonto(Oradea, Sibiu, 151);
-    grafo.addPonto(Zerind, Arad, 75);
-    grafo.addPonto(Arad, Sibiu, 140);
-    grafo.addPonto(Arad, Timisoara, 118);
-    grafo.addPonto(Timisoara, Lugoj, 111);
-    grafo.addPonto(Lugoj, Mehadia, 70);
-    grafo.addPonto(Mehadia, Drobeta, 75);
-    grafo.addPonto(Drobeta, Craiova, 120);
-    grafo.addPonto(Sibiu, Fagaras, 99);
-    grafo.addPonto(Sibiu, RVilcea, 80);
-    grafo.addPonto(RVilcea, Pitesti, 97);
-    grafo.addPonto(RVilcea, Craiova, 146);
-    grafo.addPonto(Craiova, Pitesti, 138);
-    grafo.addPonto(Fagaras, Bucharest, 211);
-    grafo.addPonto(Pitesti, Bucharest, 101);
-    grafo.addPonto(Bucharest, Giurgiu, 90);
-    grafo.addPonto(Bucharest, Urziceni, 85);
-    grafo.addPonto(Urziceni, Hirsova, 98);
-    grafo.addPonto(Urziceni, Vaslui, 142);
-    grafo.addPonto(Hirsova, Eforie, 86);
-    grafo.addPonto(Vaslui, Iasi, 92);
-    grafo.addPonto(Iasi, Neamt, 87);
+    grafo.addPonto(ORADEA, ZERIND, 71);
+    grafo.addPonto(ORADEA, SIBIU, 151);
+    grafo.addPonto(ZERIND, ARAD, 75);
+    grafo.addPonto(ARAD, SIBIU, 140);
+    grafo.addPonto(ARAD, TIMISOARA, 118);
+    grafo.addPonto(TIMISOARA, LUGOJ, 111);
+    grafo.addPonto(LUGOJ, MEHADIA, 70);
+    grafo.addPonto(MEHADIA, DROBETA, 75);
+    grafo.addPonto(DROBETA, CRAIOVA, 120);
+    grafo.addPonto(SIBIU, FAGARAS, 99);
+    grafo.addPonto(SIBIU, RVILCEA, 80);
+    grafo.addPonto(RVILCEA, PITESTI, 97);
+    grafo.addPonto(RVILCEA, CRAIOVA, 146);
+    grafo.addPonto(CRAIOVA, PITESTI, 138);
+    grafo.addPonto(FAGARAS, BUCHAREST, 211);
+    grafo.addPonto(PITESTI, BUCHAREST, 101);
+    grafo.addPonto(BUCHAREST, GIURGIU, 90);
+    grafo.addPonto(BUCHAREST, URZICENI, 85);
+    grafo.addPonto(URZICENI, HIRSOVA, 98);
+    grafo.addPonto(URZICENI, VASLUI, 142);
+    grafo.addPonto(HIRSOVA, EFORIE, 86);
+    grafo.addPonto(VASLUI, IASI, 92);
+    grafo.addPonto(IASI, NEAMT, 87);
 }
-
-class State{
-    int state;
-  public:
-
-    int getState(){
-        return state;
-    }
-    void setState(int value){
-        state = value;
-    }
-};
-
-class Action{
-    int origem; // Arad
-    int destino; // Bucarest
-
-};
-
-class Node{
-    State state;
-    float custoDeCaminho;
-    Action acao;
-
-};
-
-//Busca em profundidade.
-void DFS(int _v){
-        stack<int> pilha;
-        bool visitados[numV];
-
-        for(int i = 0; i <  numV; i++){
-            visitados[i] = false;
-        }
-
-        while (true) {
-            if(!visitados[_v]){
-                visitados[_v] = true;
-                pilha.push(_v);
-            }
-
-
-        }
-}
-
-
 
 int main(){
+
+
+
+
     Grafo grafo;
-    IniGrafo(grafo);
-    //DFS(0);
+    InitGrafo(grafo);
+    Deep_Search dfs;
+    Breadth_Search bfs;
+    vector<Node> solucao;
+    clock_t start, end;
+    int c = 0;
+
+    while(true){
+        try{
+        cout << " 1 - Busca em Profundidade     \n"
+                " 2 - Busca em Largura          \n"
+                " 3 - Busca por custo uniforme  \n"
+             << endl << "(opção): ";
+
+            cin >> c;
+
+            if(c == 1){
+                cout << "Busca em profundidade:" << endl;
+                start = clock();
+                solucao = dfs.DFS(State(BUCHAREST), State(BUCHAREST), grafo);
+                end = clock();
+                float time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+                cout << "Solução: " << "[ ";
+                for(auto elemento : solucao){
+                    cout << elemento.getStateNode().getState() << " ";
+                }
+                cout << "]" << endl << "Tempo de execução: " << time << endl << endl;
+            }
+
+            if(c == 2){
+                cout << "Busca em largura:" << endl;
+                start = clock();
+                solucao = bfs.BFS(State(ARAD), State(BUCHAREST), grafo);
+                end = clock();
+                float time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+                cout << "Solução: " << "[ ";
+                for(auto elemento : solucao){
+                    cout << elemento.getStateNode().getState() << " ";
+                }
+                cout << "]" << endl << "Tempo de execução: " << time << endl << endl;
+            }
+
+//            if(c == 3){
+
+//            }
+        }catch(string e){
+                cout << e << endl;
+        }
+    }
+
+
 
 
 

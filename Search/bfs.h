@@ -47,13 +47,13 @@ public:
         //fim_dec_expl
 
         while (true) {
-            //Verificando se borda está vazia
+            //Verificando se borda está vazia, se sim, lança um exceção de erro
             if(borda.empty()){
                 throw string("Falha pois borda está vazia!\n");
             }
-            //fim_Verif_
+            //fim_Verif
 
-            //Pegando o que esta da borda
+            //Pegando o que esta da borda (Na ourdem que entrou)
             noInit = borda.front();
 
             //Tirando da borda e setando que foi explorado
@@ -66,6 +66,8 @@ public:
             }
             //fim_Tirando
 
+            /* Verifica se o nó tem vizinhos e para cada vizinho se n estiver em explorados
+               verifica se é onde quer chegar, se sim retorna a solução, se n, add na borda*/
             int COLUNA;
             for(COLUNA = 0; COLUNA < TAM_MAPA; COLUNA++){
                 if(grafo.getPeso(localAtual, COLUNA)){

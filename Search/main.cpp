@@ -5,6 +5,7 @@
 #include "grafo.h"
 #include "dfs.h"
 #include "bfs.h"
+#include "ucs.h"
 //#include <utility> // Pra usar o make pair
 using namespace std;
 
@@ -40,32 +41,56 @@ void InitGrafo(Grafo& grafo){
 
 int main(){
 
-
-
-
     Grafo grafo;
     InitGrafo(grafo);
     Deep_Search dfs;
     Breadth_Search bfs;
+    Uniform_Cost_Search ucs;
     vector<Node> solucao;
     clock_t start, end;
-    int c = 0;
+    float time = 0;
+    int cmd = -1;
 
-    while(true){
+    //ENTRADA DO MAPA
+    State origem = State(ARAD);
+    State destido = State(BUCHAREST);
+    //fim_entrada_map
+
+    while(cmd != 0){
         try{
-        cout << " 1 - Busca em Profundidade     \n"
-                " 2 - Busca em Largura          \n"
-                " 3 - Busca por custo uniforme  \n"
-             << endl << "(opção): ";
+        cout << "BUSCAS:                         \n"
+                "  1 - Busca em Profundidade     \n"
+                "  2 - Busca em Largura          \n"
+                "  3 - Busca por custo uniforme  \n"
+                "  0 - exit                      \n"
+             << "(opção): ";
 
-            cin >> c;
+            cin >> cmd;
 
-            if(c == 1){
-                cout << "Busca em profundidade:" << endl;
+            if(cmd == 1){
+                cout << endl << "Busca em profundidade:" << endl;
                 start = clock();
-                solucao = dfs.DFS(State(BUCHAREST), State(BUCHAREST), grafo);
+                solucao = dfs.DFS(origem, destido, grafo);
                 end = clock();
-                float time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+                time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+            }
+
+            if(cmd == 2){
+                cout << endl << "Busca em largura:" << endl;
+                start = clock();
+                solucao = bfs.BFS(origem, destido, grafo);
+                end = clock();
+                time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+            }
+
+            if(cmd == 3){
+                cout << endl << "Busca por Custo Uniforme:" << endl;
+                start = clock();
+                solucao = ucs.UCS(origem, destido, grafo);
+                end = clock();
+                time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
+            }
+            if(cmd != 0){
                 cout << "Solução: " << "[ ";
                 for(auto elemento : solucao){
                     cout << elemento.getStateNode().getState() << " ";
@@ -73,31 +98,10 @@ int main(){
                 cout << "]" << endl << "Tempo de execução: " << time << endl << endl;
             }
 
-            if(c == 2){
-                cout << "Busca em largura:" << endl;
-                start = clock();
-                solucao = bfs.BFS(State(ARAD), State(BUCHAREST), grafo);
-                end = clock();
-                float time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
-                cout << "Solução: " << "[ ";
-                for(auto elemento : solucao){
-                    cout << elemento.getStateNode().getState() << " ";
-                }
-                cout << "]" << endl << "Tempo de execução: " << time << endl << endl;
-            }
-
-//            if(c == 3){
-
-//            }
         }catch(string e){
                 cout << e << endl;
         }
     }
-
-
-
-
-
     return 0;
 }
 

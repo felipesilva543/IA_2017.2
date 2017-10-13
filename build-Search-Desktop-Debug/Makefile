@@ -54,14 +54,16 @@ SOURCES       = ../Search/main.cpp \
 		../Search/node.cpp \
 		../Search/action.cpp \
 		../Search/dfs.cpp \
-		../Search/bfs.cpp 
+		../Search/bfs.cpp \
+		../Search/ucs.cpp 
 OBJECTS       = main.o \
 		grafo.o \
 		state.o \
 		node.o \
 		action.o \
 		dfs.o \
-		bfs.o
+		bfs.o \
+		ucs.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -120,13 +122,15 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		action.h \
 		dfs.h \
 		enum.h \
-		bfs.h ../Search/main.cpp \
+		bfs.h \
+		ucs.h ../Search/main.cpp \
 		../Search/grafo.cpp \
 		../Search/state.cpp \
 		../Search/node.cpp \
 		../Search/action.cpp \
 		../Search/dfs.cpp \
-		../Search/bfs.cpp
+		../Search/bfs.cpp \
+		../Search/ucs.cpp
 QMAKE_TARGET  = Search
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Search
@@ -310,7 +314,9 @@ main.o: ../Search/main.cpp ../Search/grafo.h \
 		../Search/dfs.h \
 		../Search/state.h \
 		../Search/node.h \
-		../Search/action.h
+		../Search/action.h \
+		../Search/bfs.h \
+		../Search/ucs.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Search/main.cpp
 
 grafo.o: ../Search/grafo.cpp ../Search/grafo.h \
@@ -344,6 +350,14 @@ bfs.o: ../Search/bfs.cpp ../Search/bfs.h \
 		../Search/node.h \
 		../Search/action.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bfs.o ../Search/bfs.cpp
+
+ucs.o: ../Search/ucs.cpp ../Search/ucs.h \
+		../Search/enum.h \
+		../Search/grafo.h \
+		../Search/state.h \
+		../Search/node.h \
+		../Search/action.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ucs.o ../Search/ucs.cpp
 
 ####### Install
 

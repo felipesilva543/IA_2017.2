@@ -60,7 +60,7 @@ public:
             borda.pop();
             int localAtual = noInit.getStateNode().getState();
             if(!viewed[localAtual]){
-                cout << "Visitando " << localAtual << "..." << endl;
+                //cout << "Visitando " << localAtual << "..." << endl;
                 resp.push_back(noInit);
                 viewed[localAtual] = true;
             }

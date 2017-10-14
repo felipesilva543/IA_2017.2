@@ -48,22 +48,8 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../Search/main.cpp \
-		../Search/grafo.cpp \
-		../Search/state.cpp \
-		../Search/node.cpp \
-		../Search/action.cpp \
-		../Search/dfs.cpp \
-		../Search/bfs.cpp \
-		../Search/ucs.cpp 
-OBJECTS       = main.o \
-		grafo.o \
-		state.o \
-		node.o \
-		action.o \
-		dfs.o \
-		bfs.o \
-		ucs.o
+SOURCES       = ../Search/main.cpp 
+OBJECTS       = main.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf \
@@ -105,7 +91,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		../Search/.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
@@ -123,14 +108,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		dfs.h \
 		enum.h \
 		bfs.h \
-		ucs.h ../Search/main.cpp \
-		../Search/grafo.cpp \
-		../Search/state.cpp \
-		../Search/node.cpp \
-		../Search/action.cpp \
-		../Search/dfs.cpp \
-		../Search/bfs.cpp \
-		../Search/ucs.cpp
+		ucs.h \
+		tranf_entrada.h ../Search/main.cpp
 QMAKE_TARGET  = Search
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Search
@@ -202,7 +181,6 @@ Makefile: ../Search/Search.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-6
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf \
@@ -256,7 +234,6 @@ Makefile: ../Search/Search.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-6
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf:
-.qmake.stash:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf:
@@ -291,7 +268,6 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) $(TARGET) 
-	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -316,48 +292,9 @@ main.o: ../Search/main.cpp ../Search/grafo.h \
 		../Search/node.h \
 		../Search/action.h \
 		../Search/bfs.h \
-		../Search/ucs.h
+		../Search/ucs.h \
+		../Search/tranf_entrada.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Search/main.cpp
-
-grafo.o: ../Search/grafo.cpp ../Search/grafo.h \
-		../Search/enum.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o grafo.o ../Search/grafo.cpp
-
-state.o: ../Search/state.cpp ../Search/state.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o state.o ../Search/state.cpp
-
-node.o: ../Search/node.cpp ../Search/node.h \
-		../Search/state.h \
-		../Search/action.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o node.o ../Search/node.cpp
-
-action.o: ../Search/action.cpp ../Search/action.h \
-		../Search/state.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o action.o ../Search/action.cpp
-
-dfs.o: ../Search/dfs.cpp ../Search/dfs.h \
-		../Search/enum.h \
-		../Search/grafo.h \
-		../Search/state.h \
-		../Search/node.h \
-		../Search/action.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dfs.o ../Search/dfs.cpp
-
-bfs.o: ../Search/bfs.cpp ../Search/bfs.h \
-		../Search/enum.h \
-		../Search/grafo.h \
-		../Search/state.h \
-		../Search/node.h \
-		../Search/action.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o bfs.o ../Search/bfs.cpp
-
-ucs.o: ../Search/ucs.cpp ../Search/ucs.h \
-		../Search/enum.h \
-		../Search/grafo.h \
-		../Search/state.h \
-		../Search/node.h \
-		../Search/action.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ucs.o ../Search/ucs.cpp
 
 ####### Install
 

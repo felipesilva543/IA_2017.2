@@ -1,0 +1,355 @@
+    1  sudo
+    2  sudo du
+    3  sudo su
+    4  exot
+    5  exit
+    6  sudo apt update
+    7  sudo update
+    8  sudo apt-get update
+    9  sudo upgrade
+   10  sudo apt-get  upgrade
+   11  restart now
+   12  shutdown -r now
+   13  sudo apt-get install language-pack-gnome-pt language-pack-pt-base
+   14  sudo apt install ubuntu-restricted-extras
+   15  sudo apt install unity-tweak-tool
+   16  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+   17  sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+   18  sudo apt-get update ; sudo apt-get install google-chrome-stable -y
+   19  exit
+   20  sudo rm -Rf /opt/dropbox*
+   21  sudo rm -Rf /usr/bin/dropbox
+   22  sudo rm -Rf /usr/share/applications/dropbox.desktop
+   23  uname -m
+   24  wget "http://www.dropbox.com/download/?plat=lnx.x86_64" -O dropbox.tar.gz
+   25  sudo tar -xvf dropbox.tar.gz -C /opt/
+   26  sudo mv /opt/.dropbox-dist/ /opt/dropbox
+   27  sudo ln -sf /opt/dropbox/dropboxd /usr/bin/dropbox
+   28  echo -e '[Desktop Entry]\n Version=1.0\n Name=dropbox\n Exec=/opt/dropbox/dropboxd\n Icon=/ \n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/dropbox.desktop
+   29  dropbox 
+   30  gedit .bashrc 
+   31  sudo apt-get install unity-tweak-tool
+   32  sudo apt-get install unity 
+   33  sudo dpkg-reconfigure gdm
+   34  sudo apt-get install gdm
+   35  sudo dpkg-reconfigure gdm
+   36  sudo dpkg-reconfigure lightdm
+   37  exit
+   38  sudo apt-get install git
+   39  sudo add-apt-repository ppa:webupd8team/sublime-text-3
+   40  sudo apt-get update
+   41  --java /version
+   42  jdk --version
+   43  sudo add-apt-repository ppa:webupd8team/sublime-text-3 && sudo apt-get update && sudo apt-get install sublime-text-installer
+   44  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+   45  sudo apt-get install apt-transport-https
+   46  echo "deb https://download.sublimetext.com/ apt/dev/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+   47  sudo apt-get update
+   48  sudo apt-get install sublime-text
+   49  exit
+   50  git clone https://github.com/felipesilva543/POO_2017_2
+   51  ls
+   52  git clone https://github.com/senapk/pec_2017_2
+   53  ls
+   54  exit
+   55  subl .bashrc 
+   56  sudo subl .bashrc 
+   57  subl .bashrc 
+   58  Michael Barnes
+   59  Single User License
+   60  EA7E-821385
+   61  8A353C41 872A0D5C DF9B2950 AFF6F667
+   62  C458EA6D 8EA3C286 98D1D650 131A97AB
+   63  AA919AEC EF20E143 B361B1E7 4C8B7F04
+   64  B085E65E 2F5F5360 8489D422 FB8FC1AA
+   65  93F6323C FD7F7544 3F39C318 D95E6480
+   66  FCCC7561 8A4A1741 68FA4223 ADCEDE07
+   67  200C25BE DBBC4855 C4CFB774 C5EC138C
+   68  subl .bashrc 
+   69  sudo apt-get purge sublime-text-installer
+   70  subl 
+   71  apt-get remove sublime-text 
+   72  sudo apt-get remove sublime-text 
+   73  sudo apt-get install qt5-qtcreator-defalt
+   74  sudo apt-get install qt5-qtcreator-default
+   75  sudo apt-get install qt5-qtcreator-defalt
+   76  sudo apt-get install qt5-defalt
+   77  sudo apt-get install qt5-qtcreator-defalt
+   78  sudo apt-get install build-essential
+   79  sudo apt-get install qtcreator
+   80  sudo apt-get install qt5-default
+   81  sudo apt-get update && sudo apt-get upgrade
+   82  exit
+   83  ./eclipse-inst
+   84  sudo apt-get update
+   85  sudo apt-get install default-jdk
+   86  ./eclipse-inst
+   87  sudo apt-get install gnome-tweak-tool
+   88  exit
+   89  git clone https://github.com/felipesilva543/SistemasD_2017-2
+   90  gedit /home/felipe/.bashrc 
+   91  cd Dropbox/UFC/
+   92  exit
+   93  gedit Readme.txt
+   94  exit
+   95  ipconfig
+   96  fconfig
+   97  ifconfig
+   98  exit
+   99  ifcomfig
+  100  ifconfig
+  101  git status
+  102  cd ..
+  103  git status
+  104  cd ..
+  105  git status
+  106  cd SistemasD_2017-2/
+  107  git status
+  108  git add .
+  109  git commit -m "Trabanhlo Concluido"
+  110  git push origin master
+  111  git status
+  112  git add .
+  113  git commit -m "Deu certo"
+  114  git config --global user.name "felipesilva543@alu.ufc.br"
+  115  git config --global user.email "felipesilva543@alu.ufc.br"
+  116  git config --global user.name "felipesilva543"
+  117  git add .
+  118  git commit -m "DAel"
+  119  git push origin master
+  120  exit
+  121  git status
+  122  git pull
+  123  cd ..
+  124  cd pec_2017_2/
+  125  git pull
+  126  exit
+  127  mkdir TCP-UDP
+  128  exit
+  129  cp protoc /usr/bin/
+  130  sudo cp protoc /usr/bin/
+  131  cd ..
+  132  protoc
+  133  exti
+  134  exit
+  135  cd /usr/bin/
+  136  ls
+  137  find pro*
+  138  ls -l pro*
+  139  chmod -x protoc 
+  140  sudo chmod -x protoc 
+  141  ls -l protoc 
+  142  sudo chmod -777 protoc 
+  143  ls -l protoc 
+  144  sudo chmod -777 protoc 
+  145  ls -l protoc 
+  146  sudo chmod 777 protoc 
+  147  ls -l protoc 
+  148  sudo cp protoc /usr/bin/
+  149  de /usr/bin/
+  150  cd /usr/bin/
+  151  ls -l pro*
+  152  ls -l
+  153  protoc descriptor.proto 
+  154  protoc --java_out=core/src/main/java -I../src ../src/google/protobuf/descriptor.proto
+  155  ls
+  156  protoc --java_out=core/src/main/java -I../src ../src/google/protobuf/descriptor.proto
+  157  exit
+  158  eclipse &
+  159  exit
+  160  protoc --java_out=. addressbook.proto 
+  161  javac -classpath protobuf.jar AddPerson.java ListPeople.java com/example/tutorial/AddressBookProtos.java 
+  162  java -cp .:protobuf.jar AddPerson teste.txt
+  163  protoc --java_out=core/src/main/java -I../src ../src/google/protobuf/descriptor.proto
+  164  eu queria tanto
+  165  cd core/src/main/java/
+  166  ls
+  167  pwm
+  168  pwd
+  169  ls
+  170  mkdir bin
+  171  ls
+  172  javac -d bin -Xlint:deprecation com/google/protobuf/*.java
+  173  cd bin/
+  174  ls
+  175  ls com/google/protobuf/
+  176  pwd
+  177  jar -cvf protobuf.jar com/
+  178  git pull
+  179  git status
+  180  git add .
+  181  git commit -m "Removendo alguns .zip e os Build"
+  182  git push origin master
+  183  exit
+  184  git status
+  185  git add .
+  186  git commit -m "Ajeitando Verificacao de numero"
+  187  git push origin master
+  188  exit
+  189  git add .
+  190  git commit -m "Iniciando o Trem"
+  191  git push origin master
+  192  git status
+  193  git add .
+  194  git commit -m "Continuando o TREM"
+  195  git push origin master
+  196  git pull
+  197  git status
+  198  git add .
+  199  git commit -m "Continuaçao do TREM, testes do header Split"
+  200  git push origin master
+  201  exit
+  202  git pull
+  203  cd Agenda_Telefonica/
+  204  qt Agenda_Telefonica.pro
+  205  qtcreator Agenda_Telefonica.pro
+  206  git status
+  207  git add .
+  208  git status
+  209  git add .
+  210  git status
+  211  git add *
+  212  git add .
+  213  git status
+  214  git commit -m "Terminando Agenda"
+  215  git push origin master
+  216  git status
+  217  ls
+  218  cd ..
+  219  ls
+  220  cd TREM/
+  221  git status 
+  222  git add *
+  223  git commit -m "Inicio Trem"
+  224  git push origin master 
+  225  git status
+  226  cd ..
+  227  git status
+  228  git add .
+  229  git commit -m "Deletando builds"
+  230  git push origin master
+  231  git status
+  232  exit
+  233  git status
+  234  git add .
+  235  git commit -m "Arquivo zipado de Agenda"
+  236  git push origin master 
+  237  exit
+  238  git status
+  239  git add .
+  240  git commit -m "Testes"
+  241  git push origin master
+  242  htop
+  243  sudo apt install htop
+  244  htop
+  245  git status
+  246  git add .
+  247  git status
+  248  git commit -m "Conclusão do DFS e BFS"
+  249  git push origin master
+  250  git status
+  251  git add .
+  252  git commit -m "Termino"
+  253  git push origin master
+  254  exit
+  255  git status
+  256  git add .
+  257  git commit -m ""
+  258  git commit -m "Trem.tar"
+  259  git push origin master
+  260  git status
+  261  git add .
+  262  git commit -m "Deletando arquivos desnecessários"
+  263  git push origin master
+  264  exit
+  265  git status
+  266  git add .
+  267  git commit -m "Arquivos de testes"
+  268  git push origin master 
+  269  exit
+  270  git status
+  271  git add .
+  272  git commit -m "Alteracao dos nomes das pastas"
+  273  git push origin master
+  274  exit
+  275  git status
+  276  ./Search 
+  277  exit
+  278  ./Search 1 ARAD FAGARAS
+  279  ./Search 
+  280  ./Search 1 ARAD BUCHAREST
+  281  ./Search 
+  282  ./Search 1 ARAD BUCHAREST
+  283  exit
+  284  ./Search 1 ARAD BUCHAREST
+  285  ./Search 1 ARAD BUCHA
+  286  ./Search 
+  287  ./Search 1 2 11
+  288  ./Search 1 2 3
+  289  ./Search 3 4 5
+  290  ./Search 3 ARAD SIBIL
+  291  ./Search 1 ARAD SIBIL
+  292  ./Search 1 Arad sibil
+  293  ./Search 1 ARAD SIBIU
+  294  ./Search 1 ARAD SIBIU > res.txt
+  295  ./Search res.txt 
+  296  ./Search 2 ARAD SIBIU
+  297  ./Search res.txt 
+  298  % time ./Search 1 ARAD BUCHAREST > res.txt
+  299  %time ./Search 1 ARAD BUCHAREST > res.txt
+  300  ./Search 1 ARAD SIBIU
+  301  %time ./Search 1 ARAD SIBIU
+  302  % time ./Search 1 ARAD SIBIU
+  303  time ls
+  304  time ./Search 1 ARAD BUCHAREST
+  305  time ./Search 2 ARAD BUCHAREST
+  306  time ./Search 3 ARAD BUCHAREST > te.txt
+  307  time ./Search 2 ARAD BUCHAREST > te.txt
+  308  time ./Search 1 ARAD BUCHAREST > te.txt
+  309  times ./Search 1 ARAD BUCHAREST > te.txt
+  310  times ./Search 1 ARAD BUCHAREST
+  311  time ./Search 1 ARAD BUCHAREST
+  312  exit
+  313  time ./Search 1 ARAD SIBIU
+  314  time ./build-Search-Desktop-Debug/Search 1 ARAD SIBIU
+  315  time ./Search 1 ARAD BUCHAREST
+  316  time ./build-Search-Desktop-Debug/Search 1 ARAD SIBIU
+  317  time ./Search 1 ARAD BUCHAREST
+  318  time ./Search ORADEA EFORIE
+  319  time ./Search 1 ORADEA EFORIE
+  320  time ./Search 2 ORADEA EFORIE
+  321  time ./Search 1 ARAD BUCHAREST
+  322  time help
+  323  help time
+  324  help -p time
+  325  time -p ./Search 1 ARAD SIBIU
+  326  time ./Search 1 ARAD SIBIU
+  327  time ./Search 1 TIMISOARA ARAD
+  328  time ./Search 2 TIMISOARA ARAD
+  329  time ./Search 3 TIMISOARA ARAD
+  330  cd .
+  331  cd ..
+  332  cd /
+  333  cp Search /home/felipe/Search_IA/
+  334  ls
+  335  exit
+  336  mkdir Search_IA
+  337  ls
+  338  cd Search_IA/
+  339  ls
+  340  ./Search 2 ARDA BUCHAREST
+  341  ./Search 2 ARAD BUCHAREST
+  342  time ./Search 2 ARAD BUCHAREST
+  343  exit
+  344  time ./Search 1 ARAD BUCHAREST
+  345  time ./Search 1 Arada arad
+  346  time ./Search 1 Arada bucharest
+  347  time ./Search 1 Arad bucharest
+  348  time ./Search 1 Arad Arad
+  349  exit
+  350  time ./Search 1 arad buchaRest
+  351  time ./Search 1 arad buchaRest > /dev/null 
+  352  time ./Search 1 arad bucharest > /dev/null 
+  353  history > te.txt
+  354  time ./Search 1 arad bucharest > /dev/null 
+  355  history > te.txt

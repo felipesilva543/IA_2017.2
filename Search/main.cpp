@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include <vector>
 #include <string>
 #include <ctime>
@@ -6,7 +7,7 @@
 #include "dfs.h"
 #include "bfs.h"
 #include "ucs.h"
-//#include <utility> // Pra usar o make pair
+#include "tranf_entrada.h"
 using namespace std;
 
 void InitGrafo(Grafo& grafo){
@@ -39,7 +40,7 @@ void InitGrafo(Grafo& grafo){
     grafo.addPonto(IASI, NEAMT, 87);
 }
 
-int main(){
+int main(int argc, char *argv[ ]){
 
     Grafo grafo;
     InitGrafo(grafo);
@@ -51,22 +52,30 @@ int main(){
     float time = 0;
     int cmd = -1;
 
-    //ENTRADA DO MAPA
-    State origem = State(ARAD);
-    State destido = State(BUCHAREST);
-    //fim_entrada_map
+    //CONVERÇÃO PELA ENTRADA DO TERMINAL
+    cmd = atoi(argv[1]);
+    int argOrigem = trans_entrada(argv[2]);
+    int argDestino = trans_entrada(argv[3]);
 
-    while(cmd != 0){
+    //ENTRADA DO MAPA PELO TERMINAL
+    State origem = State(argOrigem);
+    State destido = State(argDestino);
+    //Estrada MAP
+    //State origem = State(ARAD);
+    //State destido = State(BUCHAREST);
+    //fim Entrada Mapda
+
+//    while(cmd != 0){
+//        cout << "BUSCAS:                         \n"
+//                "  1 - Busca em Profundidade     \n"
+//                "  2 - Busca em Largura          \n"
+//                "  3 - Busca por custo uniforme  \n"
+//                "  0 - exit                      \n"
+//             << "(opção): ";
+
+//            cin >> cmd;
+
         try{
-        cout << "BUSCAS:                         \n"
-                "  1 - Busca em Profundidade     \n"
-                "  2 - Busca em Largura          \n"
-                "  3 - Busca por custo uniforme  \n"
-                "  0 - exit                      \n"
-             << "(opção): ";
-
-            cin >> cmd;
-
             if(cmd == 1){
                 cout << endl << "Busca em profundidade:" << endl;
                 start = clock();
@@ -95,13 +104,14 @@ int main(){
                 for(auto elemento : solucao){
                     cout << elemento.getStateNode().getState() << " ";
                 }
-                cout << "]" << endl << "Tempo de execução: " << time << endl << endl;
+                cout << "]" << endl;
+                cout << "Tempo de execução: " << time << endl << endl;
             }
 
         }catch(string e){
                 cout << e << endl;
         }
-    }
+   // }
     return 0;
 }
 

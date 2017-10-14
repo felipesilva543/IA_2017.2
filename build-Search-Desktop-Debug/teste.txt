@@ -1,0 +1,5 @@
+
+Busca em profundidade:
+Solução: [ 2 7 10 ]
+Tempo de execução: 0.016
+

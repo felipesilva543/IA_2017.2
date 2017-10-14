@@ -5,7 +5,7 @@
 #include <vector>
 #include <string>
 #include <list>
-#include <queue>
+#include <queue>    //Lista para a busca em larura
 #include "enum.h"
 #include "grafo.h"
 #include "state.h"
@@ -27,7 +27,9 @@ public:
         noInit.setState(State(_origem.getState()));
         //Finalizando no raiz do grafo
 
+        // Fila
         queue<Node> borda;
+        // Vetor de respostas
         vector<Node> resp;
 
         //Verificando se o estado inicial é o destido
@@ -60,7 +62,7 @@ public:
             borda.pop();
             int localAtual = noInit.getStateNode().getState();
             if(!viewed[localAtual]){
-                cout << "Visitando " << localAtual << "..." << endl;
+                //cout << "Visitando " << localAtual << "..." << endl;
                 resp.push_back(noInit);
                 viewed[localAtual] = true;
             }

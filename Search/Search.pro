@@ -3,14 +3,7 @@ CONFIG += console c++11
 CONFIG -= app_bundle
 CONFIG -= qt
 
-SOURCES += main.cpp \
-    grafo.cpp \
-    state.cpp \
-    node.cpp \
-    action.cpp \
-    dfs.cpp \
-    bfs.cpp \
-    ucs.cpp
+SOURCES += main.cpp
 
 HEADERS += \
     grafo.h \
@@ -20,4 +13,5 @@ HEADERS += \
     dfs.h \
     enum.h \
     bfs.h \
-    ucs.h
+    ucs.h \
+    tranf_entrada.h

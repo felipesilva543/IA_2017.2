@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <queue>
+#include <queue>    //Lista para a busca em larura
 #include "enum.h"
 #include "grafo.h"
 #include "state.h"
@@ -17,7 +17,7 @@ public:
         return no1.getCustoDeCaminho() > no2.getCustoDeCaminho();
     }
 };
-
+// Busca por custo Uniforme
 class Uniform_Cost_Search
 {
 public:
@@ -33,7 +33,7 @@ public:
         noInit.setState(State(_origem.getState()));
         //Finalizando no raiz do grafo
 
-        // DECRARANDO BORDA, ORDENA PELO MENOR CUSTO DOS ELEMENTO
+        // DECRARANDO BORDA, FILA QUE ORDENA PELO MENOR CUSTO DOS ELEMENTO
         priority_queue<Node, vector<Node>, CompCusto > borda;
         vector<Node> resp;
 
@@ -74,7 +74,7 @@ public:
             //Setando que o nó foi explorado
             int localAtual = noInit.getStateNode().getState();
             if(!viewed[localAtual]){
-                cout << "Visitando " << localAtual << "..." << endl;
+               // cout << "Visitando " << localAtual << "..." << endl;
                 resp.push_back(noInit);
                 viewed[localAtual] = true;
             }

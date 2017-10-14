@@ -100,9 +100,13 @@ int main(int argc, char *argv[ ]){
                 time = (((end - start) * 1000.0) / CLOCKS_PER_SEC);
             }
             if(cmd != 0){
+                string cidades[20] = {  "ORADEA", "ZERIND", "ARAD", "TIMISOARA", "LUGOJ",
+                                        "MEHADIA", "DROBETA","SIBIU", "RVILCEA", "CRAIOVA",
+                                        "FAGARAS", "PITESTI", "BUCHAREST", "GIURGIU", "URZICENI",
+                                        "VASLUI", "IASI", "NEAMT", "HIRSOVA", "EFORIE"};
                 cout << "Solução: " << "[ ";
                 for(auto elemento : solucao){
-                    cout << elemento.getStateNode().getState() << " ";
+                    cout << cidades[elemento.getStateNode().getState()] << " ";
                 }
                 cout << "]" << endl;
                 cout << "Tempo de execução: " << time << endl << endl;

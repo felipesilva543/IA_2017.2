@@ -1,0 +1,49 @@
+DUPLA: Felipe Silva, Iago Oliveira
+
+1 - Quem são os irmãos de Joffrey?
+
+?- findall(R,irmaoOuIrma(R,joffrey),L),sort(L,S).
+L = [tommen, myrcella, tommen, myrcella],
+S = [myrcella, tommen].
+
+2 - Quem são os filhos de Robert?
+
+?- findall(R,filhoOuFilha(R,robert),L),sort(L,S).
+L = S, S = [].
+
+3 - Quem é a filha de tywin?
+
+?- findall(R,filha(R,tywin),L),sort(L,S).
+L = S, S = [cersei].
+
+4 - Quem é a irmã de Tyrion?
+
+?- findall(R,irmao(R,tyrion),L),sort(L,S).
+L = [jaime, jaime],
+S = [jaime].
+
+5 - Jaime é o pai e tio de Joffrey?
+
+?- filho(joffrey,jaime),tio(jaime,joffrey).
+*Na procura temos dois resultados true.
+*Porem fazendo a procura separadamente da pra ver quem são os tios de joffrey, e que o joffrey é o filho de jaime.
+-------------------
+?- filho(X,jaime).
+X = joffrey ;
+X = tommen.
+-------------------
+?- tio(X,joffrey).
+X = jaime ;
+X = jaime ;
+X = tyrion ;
+X = tyrion ;
+X = tyrion ;
+X = tyrion ;
+false.
+
+6 - Quem são os avós de Tommen?
+
+?- findall(R,avoOuavo(R,tommen),L),sort(L,S).
+L = [tywin, tywin, joana, joana],
+S = [joana, tywin].
+

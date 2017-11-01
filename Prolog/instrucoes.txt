@@ -1,0 +1,12 @@
+Executar
+-prolog <arquivo.pl>
+
+Ao executar vai abrir no terminal com um ponto de interrogação (?-), para fazer as "PERGUNTAS"
+EX:
+?- paiOuMae(cersei, joffrey).
+--true
+?- paiOuMae(robert, joffrey).
+--false
+?- paiOuMae(Q, cersei).
+Q = tywin ; (vc tem que apertar ; para aparecer os demais)
+Q = joana. (quando aparecer o ponto final é pq é a ultima opção para Q)

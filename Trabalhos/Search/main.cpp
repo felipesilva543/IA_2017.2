@@ -52,7 +52,7 @@ int main(int argc, char *argv[ ]){
     float time = 0;
     int cmd = -1;
 
-    //CONVERÇÃO PELA ENTRADA DO TERMINAL
+    //CONVERSÃO PELA ENTRADA DO TERMINAL
     cmd = atoi(argv[1]);
     int argOrigem = trans_entrada(argv[2]);
     int argDestino = trans_entrada(argv[3]);

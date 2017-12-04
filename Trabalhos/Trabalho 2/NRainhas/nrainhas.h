@@ -6,7 +6,6 @@
 #include <vector>
 #include <sstream>
 
-
 using namespace std;
 
 string convStr(int i){
@@ -34,7 +33,7 @@ public:
                 cout << "Não foi possivel abrir o arquivo!\n";
             else cout << "Arquivo criado!\n";
 
-            //Ou exclusivo de linhas
+            //Posicionando Linhas
             int quebraLinha = 0;
             for(int i = 0; i <= nAtomos; i++){
                 if(quebraLinha == numRai){
@@ -48,7 +47,7 @@ public:
             }
             sFormulas = "";
 
-            //Ou exclusivo de colunas
+            //Posicionando Colunas
             int auxColuna = 1;
             int auxColuna2 = 0;
             while(auxColuna <= numRai){
@@ -66,91 +65,91 @@ public:
             sFormulas = "";
 
             //Exclusão de repetição de linhas
-            int auxEx1 = 1, cont = 1;
-            while (auxEx1 <= nAtomos){
-                int auxEx2 = auxEx1;
-                while(cont < numRai){
-                    for(int i = 0; i < (numRai - cont); i++){
-                        auxEx2++;
-                        sFormulas += "-" + convStr(auxEx1) + " -" + convStr(auxEx2) + " 0";
+            int auxExLin = 1, cColLi = 1;
+            while (auxExLin <= nAtomos){
+                int auxExLin2 = auxExLin;
+                while(cColLi < numRai){
+                    for(int i = 0; i < (numRai - cColLi); i++){
+                        auxExLin2++;
+                        sFormulas += "-" + convStr(auxExLin) + " -" + convStr(auxExLin2) + " 0";
                         vFormulas.push_back(sFormulas);
                         sFormulas = "";
                     }
-                    cont++;
-                    auxEx1++;
-                    auxEx2 = auxEx1;
+                    cColLi++;
+                    auxExLin++;
+                    auxExLin2 = auxExLin;
                 }
-                    auxEx1 += 1;
-                    cont = 1;
+                    auxExLin += 1;
+                    cColLi = 1;
             }
             sFormulas = "";
 
-            //Exclusão de repetição de colunas
-            auxEx1 = 1, cont = 1;
-            int cont2 = 1;
-            while (auxEx1 <= nAtomos){
-                int auxEx2 = auxEx1;
-                while(cont <= numRai){
-                    for(int i = 0; i < (numRai - cont2); i++){
-                        auxEx2 += numRai;
-                        sFormulas += "-" + convStr(auxEx1) + " -" + convStr(auxEx2) + " 0";
+            //Exclusão de repetição nas colunas
+            int auxExCol = 1, cColu = 1;
+            int cLinha = 1;
+            while (auxExCol <= nAtomos){
+                int auxExCol2 = auxExCol;
+                while(cColu <= numRai){
+                    for(int i = 0; i < (numRai - cLinha); i++){
+                        auxExCol2 += numRai;
+                        sFormulas += "-" + convStr(auxExCol) + " -" + convStr(auxExCol2) + " 0";
                         vFormulas.push_back(sFormulas);
                         sFormulas = "";
                     }
-                    cont++;
-                    auxEx1++;
-                    auxEx2 = auxEx1;
+                    cColu++;
+                    auxExCol++;
+                    auxExCol2 = auxExCol;
                 }
-                    cont2++;
-                    cont = 1;
+                    cLinha++;
+                    cColu = 1;
             }
             sFormulas = "";
 
-            //Exclusão de diagonais primarias
-            int auxDia = 1, auxDia2 = 0;
-            while(auxDia <= nAtomos){
-                int col1 = 1, lin1 = 1;
-                auxDia2 = auxDia;
-                while(col1 <= numRai){
-                    for(int i = 0; i < (numRai - lin1); i++ ){
-                        auxDia2 += numRai + 1;
-                        if(auxDia2 <= nAtomos){
-                            sFormulas += "-" + convStr(auxDia) + " -" + convStr(auxDia2) + " 0";
+            //Exclusão de repetição nas diagonais primarias
+            int auxDiaPri = 1, auxDiapri2 = 0;
+            while(auxDiaPri <= nAtomos){
+                int coluna = 1, linha = 1;
+                auxDiapri2 = auxDiaPri;
+                while(coluna <= numRai){
+                    for(int i = 0; i < (numRai - linha); i++ ){
+                        auxDiapri2 += numRai + 1;
+                        if(auxDiapri2 <= nAtomos){
+                            sFormulas += "-" + convStr(auxDiaPri) + " -" + convStr(auxDiapri2) + " 0";
                             vFormulas.push_back(sFormulas);
                             sFormulas = "";
                         }
                     }
-                    lin1++;
-                    auxDia++;
-                    auxDia2 = auxDia;
-                    col1++;
+                    linha++;
+                    auxDiaPri++;
+                    auxDiapri2 = auxDiaPri;
+                    coluna++;
                 }
             }
             sFormulas = "";
 
-            //Exclusão de diagonais secundárias
-            int auxDeContagem = 1;
-            auxDia = 2, auxDia2 = 0;
-            while(auxDia <= nAtomos){
-                int col1 = 1, lin1 = 1;
-                auxDia2 = auxDia;
-                while(col1 <= numRai){
-                    for(int i = 0; i < lin1; i++ ){
-                        auxDia2 += numRai - 1;
-                        if(auxDia2 <= nAtomos){
-                            if(auxDia != ((numRai*auxDeContagem)+1)){
-                                sFormulas += "-" + convStr(auxDia) + " -" + convStr(auxDia2) + " 0";
+            //Exclusão de repetição nas diagonais secundárias
+            int auxPriCol = 1;
+            int auxDiaSec = 2, auxDiaSec2 = 0;
+            while(auxDiaSec <= nAtomos){
+                int coluna = 1, linha = 1;
+                auxDiaSec2 = auxDiaSec;
+                while(coluna <= numRai){
+                    for(int i = 0; i < linha; i++ ){
+                        auxDiaSec2 += numRai - 1;
+                        if(auxDiaSec2 <= nAtomos){
+                            if(auxDiaSec != ((numRai*auxPriCol)+1)){
+                                sFormulas += "-" + convStr(auxDiaSec) + " -" + convStr(auxDiaSec2) + " 0";
                                 vFormulas.push_back(sFormulas);
                                 sFormulas = "";
                             }
                         }
                     }
-                    auxDia++;
-                    lin1++;
-                    auxDia2 = auxDia;
-                    col1++;
+                    auxDiaSec++;
+                    linha++;
+                    auxDiaSec2 = auxDiaSec;
+                    coluna++;
                 }
-                auxDeContagem++;
+                auxPriCol++;
             }
             sFormulas = "";
 

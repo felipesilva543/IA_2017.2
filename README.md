@@ -1,5 +1,5 @@
-# IA_2017.2
-Arquivos de programação da cadeira de Inteligencia Artificial
+# Inteligência Artificia
+Arquivos de programação da cadeira de Inteligencia Artificial, 2017.2
 
 # Agenda
 1. Agent table | S. Reflex Agent
